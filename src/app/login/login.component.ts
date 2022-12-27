@@ -8,17 +8,15 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   constructor(){ }
 
-  criateCont(){
-    const loginContainer = document.getElementById('loginContainer');
-
-    const moveOverlay = () => loginContainer!.classList.toggle('move');
-
-    document.getElementById('open-register')!.addEventListener("click", moveOverlay)
-    document.getElementById('open-login')!.addEventListener("click", moveOverlay)
-
-    document.getElementById('open-register-mobile')!.addEventListener('click', moveOverlay)
-    document.getElementById('open-login-mobile')!.addEventListener('click', moveOverlay)
-                               
+  moveOverlay(){
+    let move: string = (<HTMLInputElement>document.getElementById('loginContainer')).value;
+    const movendoTudo = document.getElementById('loginContainer');
+    if(move != ""){
+     movendoTudo?.classList.toggle('move')       
+    }
+    else{
+      alert("SIIIIRRRRRRRRR")
+    }
   }
 }
 

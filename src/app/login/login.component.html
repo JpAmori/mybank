@@ -2,44 +2,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-<main>
-    <div class="login_container" id="loginContainer">
-        <div class="form-container">
-            <form class="form form-login">
-                <h2 class="form-title">Seja bem Vindo!</h2>
-                <div class="form-inputs"></div>
-                    <input type="text" class="form-input" placeholder="Username">
-                    <input type="password" class="form-input" placeholder="Password">
-                <a href="#" class="form-link">Esqueceu a senha ?</a>
-                <button class="form-button">Login</button>
-            </form>
-            <form class="form form-cadastro">
-                <h2 class="form-title" id="open-register-mobile">Criar Conta</h2>
-                <div class="icons">
-                    <a href="#" target="_blank" class="social"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" target="_blank" class="social"><i class="fa-brands fa-google"></i></a>
-                    <a href="#" target="_blank" class="social"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <p class="text">Cadastre o seu E-mail</p>
-                <div class="form-inputs"></div>
-                    <input type="text" class="form-input" placeholder="Name">
-                    <input type="email" class="form-input" placeholder="Email">
-                    <input type="password" class="form-input" placeholder="Password">
-                    <button class="form-button" id="open-login-mobile">Cadastrar</button>
-            </form>
-            <div class="overlay-container">
-                <div class="overlay">
-                    <h2 class="form-title"> Já tem Conta ?</h2>
-                    <p class="text-overlay">Para entrar na nossa plataforma faça login com suas informações.</p>
-                    <button class="form-button-overlay" id="open-login">Entrar</button>   
-                </div>
-                <div class="overlay">
-                    <h2 class="form-title"> Olá Funcionário!</h2>
-                    <p class="text-overlay">Cadastre-se e conheçe a usar a nossa plataforma on-line.</p>
-                    <button class="form-button-overlay" id="open-register">Criar Conta</button>    
+    <main>
+        <div class="login_container" id="loginContainer">
+            <div class="form-container">
+                <form class="form form-login">
+                    <h2 class="form-title">Seja bem Vindo!</h2>
+                    <div class="icons">
+                        <!--<a href="#" target="_blank" class="social"><i class="fa-solid fa-building-columns"></i></a>
+                        <a href="#" target="_blank" class="social"><i class="fa-brands fa-google"></i></a>
+                        <a href="#" target="_blank" class="social"><i class="fa-brands fa-linkedin-in"></i></a>-->
+                    </div>
+                    <div class="form-inputs"></div>
+                        <input type="text" class="form-input" placeholder="Username">
+                        <input type="password" class="form-input" placeholder="Password">
+                    <a href="#" class="form-link">Esqueceu a senha ?</a>
+                    <button type="button" class="form-button">Login</button>
+                    <p class="mobile">Não tem conta ? 
+                        <a href="#" id="open-register-mobile" (click)="moveOverlay()">Registre-se</a></p>
+                </form>
+                <form class="form form-register">
+                    <h2 class="form-title" id="open-register-mobile">Criar Conta</h2>
+                    <p class="text">Cadastre o seu E-mail</p>
+                    <div class="form-inputs"></div>
+                        <input type="text" class="form-input" placeholder="Name">
+                        <input type="email" class="form-input" placeholder="Email">
+                        <input type="password" class="form-input" placeholder="Password">
+                        <button type="button" class="form-button">Cadastrar</button>
+                        <p class="mobile">Já tem conta ? 
+                        <a href="#" id="open-login-mobile" (click)="moveOverlay()">Login</a></p>
+                </form>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <h2 class="form-title"> Já tem Conta ?</h2>
+                        <p class="text-overlay">Para entrar na nossa plataforma faça login com suas informações.</p>
+                        <button class="form-button-overlay" id="open-login" (click)="moveOverlay()">Entrar</button>   
+                    </div>
+                    <div class="overlay">
+                        <h2 class="form-title"> Olá Funcionário!</h2>
+                        <p class="text-overlay">Cadastre-se e conheçe a usar a nossa plataforma on-line.</p>
+                        <button class="form-button-overlay" id="open-register" (click)="moveOverlay()">Criar Conta</button>    
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
- 
+    </main>
