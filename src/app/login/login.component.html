@@ -13,10 +13,10 @@
                         <a href="#" target="_blank" class="social"><i class="fa-brands fa-linkedin-in"></i></a>-->
                     </div>
                     <div class="form-inputs"></div>
-                        <input type="text" class="form-input" placeholder="Username">
-                        <input type="password" class="form-input" placeholder="Password">
+                        <input [(ngModel)]="usuario.username" name="username" type="text" class="form-input" placeholder="Username">
+                        <input [(ngModel)]="usuario.password" name="password" type="password" class="form-input" placeholder="Password">
                     <a href="#" class="form-link">Esqueceu a senha ?</a>
-                    <button type="button" class="form-button">Login</button>
+                    <button type="button" class="form-button" (click)="autenticUser()" >Login</button>
                     <p class="mobile">Não tem conta ? 
                         <a href="#" id="open-register-mobile" (click)="moveOverlay()">Registre-se</a></p>
                 </form>

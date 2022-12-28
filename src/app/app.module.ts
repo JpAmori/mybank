@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { LoginComponent } from './login/login.component'
 import { ErrosModule } from './erros/erros.module';
+import { loginModel } from './models/loginModel';
+import { loginAuth } from './login/login.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,10 @@ import { ErrosModule } from './erros/erros.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ErrosModule
+    ErrosModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [loginAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
