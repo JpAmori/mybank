@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+
+
+.info {
+    background-color: rgb(249, 221, 22);
+    border: 2px solid rgb(0, 56, 168);
+    display: flex;
+    padding: 20px 2%;
+    justify-content: space-between;
+    color: white;
+}
