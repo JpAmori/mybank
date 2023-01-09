@@ -70,3 +70,16 @@ main {
         box-shadow: none;
     }
 }
+.mobile {
+    display: none;
+}
+
+@media(max-width: 768px){
+    .mobile{
+        display: block;
+    }
+    .mobile a{
+        font-weight: 900;
+        color: inherit;
+    }
+}
