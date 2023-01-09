@@ -16,7 +16,7 @@ export class NotFoundComponent implements OnInit {
     }
 
     retorno(){
-        this.router.navigate(['/'])
+        this.router.navigate(['/home'])
     }
     
 }

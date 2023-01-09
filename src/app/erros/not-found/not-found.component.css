@@ -60,26 +60,15 @@ main {
 
 
 @media(max-width: 768px){
-    main{
-        align-items: center;
-        text-align: center;
-    }
     .text-center{
         height: 100vh;
         width: 100vh;
         box-shadow: none;
     }
-}
-.mobile {
-    display: none;
-}
-
-@media(max-width: 768px){
-    .mobile{
-        display: block;
+    .content{
+        padding: 0px;
     }
-    .mobile a{
-        font-weight: 900;
-        color: inherit;
+    h1{
+        font-size: 2rem;
     }
 }

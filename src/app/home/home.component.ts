@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Route, Router } from "@angular/router";
 
 @Component({
     selector: 'HomeComponents',
@@ -10,7 +11,11 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
         
     }
-
-    mensagem: string = '';
     
+    constructor(private router: Router){}
+ 
+    createAccount(){
+        this.router.navigate(['/CriarConta'])
+        console.log("Test")
+    }
 }

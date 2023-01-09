@@ -11,12 +11,14 @@ import { loginAuth } from './login/login.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CriarContaComponent } from './CriarConta/criarconta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
+    CriarContaComponent
   ],
   imports: [
     BrowserModule,

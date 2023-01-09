@@ -14,9 +14,7 @@ export class loginAuth{
             this.userAuthenticated = true;
 
             this.router.navigate(['/home'])
-            console.log("2")
         }else{
-            console.log("3")
             this.userAuthenticated = false;
             this.mensagem = "Chave/senha informadas estão incorretas ou incompletas."
             alert(this.mensagem)
