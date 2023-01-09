@@ -9,6 +9,8 @@ import { ErrosModule } from './erros/erros.module';
 import { loginModel } from './models/loginModel';
 import { loginAuth } from './login/login.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ErrosModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [loginAuth],
   bootstrap: [AppComponent]
