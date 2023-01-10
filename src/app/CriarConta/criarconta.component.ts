@@ -37,7 +37,6 @@ export class CriarContaComponent implements OnInit {
     }    
 
     showCont(): void{
-        
         if(localStorage.getItem('BANK')){
             const BANK: UserConta[] = JSON.parse(localStorage.getItem('BANK') || '[]')
             this.usuario = BANK
