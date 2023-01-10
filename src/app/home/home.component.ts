@@ -16,6 +16,5 @@ export class HomeComponent implements OnInit {
  
     createAccount(){
         this.router.navigate(['/CriarConta'])
-        console.log("Test")
     }
 }
