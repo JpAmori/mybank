@@ -26,7 +26,7 @@ constructor(private authService: loginAuth){ }
      movendoTudo?.classList.toggle('move')       
     }
     else{
-      alert("SIIIIRRRRRRRRR")
+      
     }
   }
 

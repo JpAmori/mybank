@@ -92,7 +92,24 @@
                 <button (click)="createUser()">Criar Conta</button>
             </div>
             </form>   
-            
+            <div class="form">
+
+                <div class="error" *ngIf="usuario.length == 0">
+                    <p>Ainda não há nenhuma conta cadastrada</p>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <th>Número</th>
+                            <th>Titular</th>
+                            <th>Telefone</th>
+                        </tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </main>
