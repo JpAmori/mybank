@@ -1,3 +1,54 @@
+<!--<div class="p-5">
+    <div class="container shadow p-5">
+        <div class="p-5 border border-light rounded">
+            <h2>Insira os dados</h2>
+            <hr/>
+            <form [formGroup]="form" (ngSubmit)="createUser()">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" 
+                                placeholder="Nome" formControlName="name"/>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-sm" 
+                                placeholder="Sobrenome" formControlName="lastName"/>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control form-control-sm" 
+                            placeholder="E-mail" formControlName="email"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control form-control-sm" 
+                            placeholder="Telefone" formControlName="phone"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" class="form-control form-control-sm" 
+                            placeholder="CPF" formControlName="cpf"/>
+                        </div>
+                        <div class="col-2">
+                            <input type="number" class="form-control form-control-sm" 
+                            placeholder="Renda Mesal" formControlName="income"/>
+                        </div>
+                        <div class="col-2">
+                            <button type="submit">Criar Conta</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="container">
+                <div class="pt-5 row">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
 <header>
     <div class="nav">
        <button class="btn">Cadastrar</button>
@@ -8,51 +59,38 @@
     <div class="container">
         <h2>Insira os dados</h2>
         <div class="form">
+            <form [formGroup]="form" (ngSubmit)="createUser()">
             <div class="inputs">
                 <div class="input-box">
                     <label for="firstname" class="col1">Primeiro Nome:</label>
-                    <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+                    <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" formControlName="name">
                 </div>
                 <div class="input-box" >
                     <label for="lastname" class="col1">Sobrenome:</label>
-                    <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+                    <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required formControlName="lastName">
                 </div>
                 <div class="input-box">
                     <label for="email" class="col1">E-mail:</label>
-                    <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required formControlName="email">
                 </div>
                 <div class="input-box">
                     <label for="number" class="col1">Celular:</label>
-                    <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                    <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required formControlName="phone">
                 </div>
                 <div class="input-box">
                     <label for="number" class="col1">CPF:</label>
-                    <input id="number" type="CPF" name="CPF" placeholder="123.456.789-10" required>
+                    <input id="number" type="CPF" name="CPF" placeholder="123.456.789-10" required
+                    formControlName="cpf">
                 </div>
                 <div class="input-box">
                     <label for="number" class="col1">Renda Mensal:</label>
-                    <input id="number" type="number" placeholder="1200,R$" required>
+                    <input id="number" type="number" placeholder="1200,R$" required
+                    formControlName="income">
                 </div>
             </div>
-            <div class="gender-pather">
-                <div class="gender-title">
-                    <h6>Gênero:</h6>
-                </div>
-                <div class="gender">
-                    <input type="radio" id="female" name="gender">
-                    <label for="female">Femino</label>
-                </div>
-                <div class="gender">
-                    <input type="radio" id="male" name="gender">
-                    <label for="male">Masculino</label>
-                </div>
-                <div class="gender">
-                    <input type="radio" id="none" name="gender">
-                    <label for="noen">Prefiro não dizer</label>
-                </div>
-                </div>    
+            </form>   
             <div class="createAccount">
-                <button>Criar Conta</button>
+                <button (click)="createUser()">Criar Conta</button>
             </div>
         </div>
     </div>

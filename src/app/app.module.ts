@@ -14,6 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CriarContaComponent } from './CriarConta/criarconta.component';
 
 @NgModule({
+  bootstrap: [
+    AppComponent
+  ],
   declarations: [
     AppComponent,
     HomeComponent,
@@ -29,6 +32,5 @@ import { CriarContaComponent } from './CriarConta/criarconta.component';
     ReactiveFormsModule
   ],
   providers: [loginAuth],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }
