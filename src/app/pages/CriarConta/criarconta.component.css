@@ -202,3 +202,12 @@ main {
         
     }
 }
+
+.error-text {
+    font-size: 12px;
+    line-height: 18px;
+    color: red;
+    padding: 3px;
+    margin-left: 18px;
+}
+

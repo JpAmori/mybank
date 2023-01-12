@@ -1,0 +1,71 @@
+<header>
+    <div class="nav">
+       <button class="btn">Cadastrar</button>
+       <button class="btn">Consultar</button>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <h2>Insira os dados</h2>
+        <div class="form">
+            <form [formGroup]="form" (ngSubmit)="createUser(form)">
+            <div class="inputs">
+                <div class="input-box">
+                    <label for="firstname" class="col1">Primeiro Nome:</label>
+                    <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" formControlName="name" ngModel required>
+                    <div *ngIf="(form.controls['name']?.invalid && form.controls['name']?.touched) || form.controls['name']?.dirty">
+                        <span class="error-text" *ngIf="form.controls['name']?.errors?.required"> O campo de nome deve ser preenchido! </span>
+                    </div>
+                </div>
+                <div class="input-box" >
+                    <label for="lastname" class="col1">Sobrenome:</label>
+                    <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" formControlName="lastName" ngModel required>
+                    <div *ngIf="(form.controls['lastName']?.invalid && form.controls['lastName']?.touched) || form.controls['lastName']?.dirty">
+                        <span class="error-text" *ngIf="form.controls['lastName']?.errors?.required"> O campo de Sobrenome deve ser preenchido! </span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label for="email" class="col1">E-mail:</label>
+                    <input id="email" type="email" name="email" placeholder="Digite seu e-mail" formControlName="email" ngModel required>
+                    <div *ngIf="(form.controls['email']?.invalid && form.controls['email']?.touched) || form.controls['email']?.dirty">
+                         <span class="error-text" *ngIf="form.controls['email']?.errors?.required"> O campo de E-mail deve ser preenchido! </span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label for="number" class="col1">Celular:</label>
+                    <input id="number" type="coll" name="number" placeholder="(xx) xxxx-xxxx" formControlName="phone" ngModel required>
+                    <div *ngIf="(form.controls['phone']?.invalid && form.controls['phone']?.touched) || form.controls['phone']?.dirty">
+                        <span class="error-text" *ngIf="form.controls['phone']?.errors?.required"> O campo de Telefone deve ser preenchido! </span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label for="number" class="col1">CPF:</label>
+                    <input id="number" type="number" name="CPF" placeholder="123.456.789-10" 
+                    formControlName="cpf" ngModel required pattern="(\(?\d{3}\)?\.?)(\d{3}\.?)(\d{3}\-?)(\d{2})">
+                    <div *ngIf="(form.controls['cpf']?.invalid && form.controls['cpf']?.touched) || form.controls['cpf']?.dirty">
+                        <span class="error-text" *ngIf="form.controls['cpf']?.errors?.required"> O campo de CPF deve ser preenchido! </span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label for="number" class="col1">Renda Mensal:</label>
+                    <input id="number" type="number" placeholder="1200,R$"
+                    formControlName="income" ngModel required>
+                    <div *ngIf="(form.controls['income']?.invalid && form.controls['income']?.touched) || form.controls['income']?.dirty">
+                        <span class="error-text" *ngIf="form.controls['income']?.errors?.required"> A Renda Mensal deve ser informada! </span>
+                    </div>
+                </div>
+            </div>
+            <div class="createAccount">
+                <button (click)="createUser(form)">Criar Conta</button>
+            </div>
+            </form>   
+            <div class="form">
+                <div class="error" *ngIf="usuario.length == 0">
+                    <p>Ainda não há nenhuma conta cadastrada</p>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
