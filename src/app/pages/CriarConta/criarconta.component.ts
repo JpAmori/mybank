@@ -3,6 +3,7 @@ import { FormControl, FormGroup, NgForm, Validators } from "@angular/forms";
 import { UserConta } from "./criarConta";
 
 
+
 @Component({
     selector: 'CriarConta',
     templateUrl: './criarconta.component.html',
@@ -19,6 +20,7 @@ export class CriarContaComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.consultCont();
         this.form = new FormGroup({
             name: new FormControl('', Validators.required),
             lastName: new FormControl('', Validators.required),
@@ -28,33 +30,36 @@ export class CriarContaComponent implements OnInit {
             income: new FormControl('', Validators.required),
         })
     }
-    
-    cpfcnpjmask() {
-        const value = this.form.get('cpf_cnpj').value;
-        console.log(value, value.length,this.form)
-        if(value.length <= 14) {
-          this.mask = '00.000.000/0000-00'
-        }
-        else {
-          this.mask = '00.000.0000-00'
-        }
-      }
 
     createUser(form: NgForm): void{
         if(form.valid){
             const user: UserConta = this.form.value;
             user.contNumber = Math.floor(Math.random()*250);
             this.usuario.push(user);
-            localStorage.setItem('BANK', JSON.stringify(this.usuario));
+            localStorage.setItem('USER', JSON.stringify(this.usuario));
             this.form.reset();
         }
 
     }
 
     showCont(): void{
-        if(localStorage.getItem('BANK')){
-            const BANK: UserConta[] = JSON.parse(localStorage.getItem('BANK') || '[]')
-            this.usuario = BANK
+        let move: string = (<HTMLInputElement>document.getElementById('overlay-container')).value;
+        const movendoTudo = document.getElementById('overlay-container');
+        if(move != ""){
+            movendoTudo?.classList.toggle('hide')
+            movendoTudo?.classList.toggle('overlay-container');
+            movendoTudo?.classList.toggle('move')    
         }
     }
+
+    consultCont(): void{
+        if(localStorage.getItem('USER')){
+            const BANK: UserConta[] = JSON.parse(localStorage.getItem('USER') || '[]')
+            this.usuario = BANK
+            console.log(BANK)
+        }else{
+            this.usuario = []
+        }
+    }
+
 }

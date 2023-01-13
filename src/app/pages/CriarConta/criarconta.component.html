@@ -1,11 +1,34 @@
 <header>
     <div class="nav">
-       <button class="btn">Cadastrar</button>
-       <button class="btn">Consultar</button>
+       <button class="btn" (click)="showCont()">Cadastrar</button>
+       <button class="btn" (click)="showCont()">Consultar</button>
     </div>
 </header>
 <main>
     <div class="container">
+        <div class="hide" id="overlay-container" >
+            <table>
+                <thead class="table">
+                    <h2>Contas Cadastradas</h2>
+                    <tr>
+                        <th>NÚMERO DA CONTA'</th>
+                        <th>NOME</th>
+                        <th>CPF</th>
+                        <th>E-MAIL</th>
+                        <th>TELEFONE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of usuario">
+                        <td>{{user.contNumber}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.cpf}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phone}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <h2>Insira os dados</h2>
         <div class="form">
             <form [formGroup]="form" (ngSubmit)="createUser(form)">
@@ -33,7 +56,7 @@
                 </div>
                 <div class="input-box">
                     <label for="number" class="col1">Celular:</label>
-                    <input id="number" type="coll" name="number" placeholder="(xx) xxxx-xxxx" formControlName="phone" ngModel required>
+                    <input id="number" type="coll" name="number" placeholder="(xx) xxxx-xxxx" formControlName="phone" maxlength="12" ngModel required>
                     <div *ngIf="(form.controls['phone']?.invalid && form.controls['phone']?.touched) || form.controls['phone']?.dirty">
                         <span class="error-text" *ngIf="form.controls['phone']?.errors?.required"> O campo de Telefone deve ser preenchido! </span>
                     </div>
@@ -41,7 +64,7 @@
                 <div class="input-box">
                     <label for="number" class="col1">CPF:</label>
                     <input id="number" type="number" name="CPF" placeholder="123.456.789-10" 
-                    formControlName="cpf" ngModel required pattern="(\(?\d{3}\)?\.?)(\d{3}\.?)(\d{3}\-?)(\d{2})">
+                    formControlName="cpf" ngModel required>
                     <div *ngIf="(form.controls['cpf']?.invalid && form.controls['cpf']?.touched) || form.controls['cpf']?.dirty">
                         <span class="error-text" *ngIf="form.controls['cpf']?.errors?.required"> O campo de CPF deve ser preenchido! </span>
                     </div>
@@ -57,15 +80,8 @@
             </div>
             <div class="createAccount">
                 <button (click)="createUser(form)">Criar Conta</button>
-            </div>
-            </form>   
-            <div class="form">
-                <div class="error" *ngIf="usuario.length == 0">
-                    <p>Ainda não há nenhuma conta cadastrada</p>
-                </div>
-                <div>
-                </div>
-            </div>
+            </div>    
+        </form>
         </div>
     </div>
 </main>

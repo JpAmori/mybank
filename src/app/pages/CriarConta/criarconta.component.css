@@ -110,22 +110,6 @@ main {
     color: #000000be;
 }
 
-.gender-pather {
-  
-    justify-content: space-between;
-    margin-top: 0.62rem;
-    padding: 0 .5rem;
-}
-
-.gender input{
-    margin-right: 0.35rem;
-}
-
-.gender label{
-    font-size: 0.81rem;
-    font-weight: 600;
-    color: #000000c0;
-}
 
 .createAccount button{
     width: 100%;
@@ -144,6 +128,31 @@ main {
     color: black;
     transition: 1s;
 }
+
+.overlay-container{
+    position: absolute;
+    height: 80vh;
+    width: 79.4%;
+    border-radius: 13px;
+    box-shadow: 0 5px 20px #a0a0a0;
+    color: black;
+    opacity: 0;
+    transition: 1s;
+
+}
+
+.hide{
+    display: none;
+}
+
+.move {
+    opacity: 1;
+    background-color: rgb(0, 56, 168);
+    box-shadow: 0 5px 20px #a0a0a0;
+    color: white;
+    transition: 1s;
+}
+
 
 @media screen and (max-width: 1330px) {
     .container{
@@ -209,5 +218,12 @@ main {
     color: red;
     padding: 3px;
     margin-left: 18px;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
 }
 
