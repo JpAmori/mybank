@@ -45,10 +45,12 @@ export class CriarContaComponent implements OnInit {
     showCont(): void{
         let move: string = (<HTMLInputElement>document.getElementById('overlay-container')).value;
         const movendoTudo = document.getElementById('overlay-container');
+        const btn = document.getElementById('btn');
         if(move != ""){
             movendoTudo?.classList.toggle('hide')
             movendoTudo?.classList.toggle('overlay-container');
-            movendoTudo?.classList.toggle('move')    
+            movendoTudo?.classList.toggle('move')  
+            btn?.classList.toggle('hide')  
         }
     }
 

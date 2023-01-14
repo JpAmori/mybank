@@ -7,27 +7,29 @@
 <main>
     <div class="container">
         <div class="hide" id="overlay-container" >
-            <table>
-                <thead class="table">
-                    <h2>Contas Cadastradas</h2>
-                    <tr>
-                        <th>NÚMERO DA CONTA</th>
-                        <th>NOME</th>
-                        <th>CPF</th>
-                        <th>E-MAIL</th>
-                        <th>TELEFONE</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let user of usuario">
-                        <td>{{user.contNumber}}</td>
-                        <td>{{user.name}}</td>
-                        <td>{{user.cpf}}</td>
-                        <td>{{user.email}}</td>
-                        <td>{{user.phone}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="show">
+                <h2>Contas Cadastradas</h2>
+                <table class="table">
+                    <thead class="table-head">
+                        <tr>
+                            <th>NOME</th>
+                            <th>CPF</th>
+                            <th>E-MAIL</th>
+                            <th>TELEFONE</th>
+                            <th>NÚMERO DA CONTA</th>
+                        </tr>
+                    </thead>
+                    <tbody class="dados">
+                        <tr *ngFor="let user of usuario">
+                            <td>{{user.name}}</td>
+                            <td>{{user.cpf}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.phone}}</td>
+                            <td class="contNumber">{{user.contNumber}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <h2>Insira os dados</h2>
         <div class="form">
@@ -51,7 +53,7 @@
                     <label for="email" class="col1">E-mail:</label>
                     <input id="email" type="email" name="email" placeholder="Digite seu e-mail" formControlName="email" ngModel required>
                     <div *ngIf="(form.controls['email']?.invalid && form.controls['email']?.touched) || form.controls['email']?.dirty">
-                         <span class="error-text" *ngIf="form.controls['email']?.errors?.required"> O campo de E-mail deve ser preenchido! </span>
+                         <span class="error-text" *ngIf="form.controls['email']?.errors?.required"> O campo de E-mail deve ser preenchido como Email! </span>
                     </div>
                 </div>
                 <div class="input-box">
@@ -63,8 +65,8 @@
                 </div>
                 <div class="input-box">
                     <label for="number" class="col1">CPF:</label>
-                    <input id="number" type="number" name="CPF" placeholder="123.456.789-10" 
-                    formControlName="cpf" ngModel required>
+                    <input id="number" type="text" name="CPF" placeholder="123.456.789-10" 
+                    formControlName="cpf" ngModel required min="11" maxlength="14">
                     <div *ngIf="(form.controls['cpf']?.invalid && form.controls['cpf']?.touched) || form.controls['cpf']?.dirty">
                         <span class="error-text" *ngIf="form.controls['cpf']?.errors?.required"> O campo de CPF deve ser preenchido! </span>
                     </div>
@@ -78,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            <div class="createAccount">
+            <div class="createAccount" id="btn">
                 <button (click)="createUser(form)">Criar Conta</button>
             </div>    
         </form>
